@@ -16,6 +16,7 @@ https://github.com/daxijiu/sd-webui-sdxl-styles-preset.git
 ### 使用
 
 安装完成重启webui后，在“采样器”旁边就能看到选择预设的下拉菜单了。
+![p](screenshot.webp)
 
 ### 感谢
 
