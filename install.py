@@ -8,7 +8,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 if not os.path.exists(os.path.join(current_dir, 'installed')):
     with open(os.path.join(current_dir, 'installed'), 'w') as f1:
         f1.write('')
-    shared.opts.set('samplers_in_dropdown',True)
+    shared.opts.setattr('samplers_in_dropdown', True)
 # 获取 config.json 文件的绝对路径
     json_file_path = os.path.join(current_dir, '..', '..', 'config.json')
 
