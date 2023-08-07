@@ -6,13 +6,18 @@ from modules import script_callbacks
 import json
 import os
 
-stylespath = ""
-
+#stylespath = ""
+json_data = []
 
 def get_json_content(file_path):
     try:
         with open(file_path, 'r', encoding='UTF-8') as file:
             json_data = json.load(file)
+            user_path = os.path.join(scripts.basedir(), 'user_styles.json')
+            if os.path.exists(user_path):
+                with open(user_path, 'r', encoding='UTF-8') as f:
+                    user_data = json.load(f)
+                    json_data.extend(user_data)
             return json_data
     except Exception as e:
         print(f"A Problem occurred: {str(e)}")
@@ -39,16 +44,17 @@ def read_sdxl_styles(json_data):
 
 
 def getStyles():
-    global stylespath
+#    global json_data
+    global json_data
     json_path = os.path.join(scripts.basedir(), 'sdxl_styles.json')
-    stylespath = json_path
+#    stylespath = json_path
     json_data = get_json_content(json_path)
     styles = read_sdxl_styles(json_data)
     return styles
 
 
 def createPositive(style, positive):
-    json_data = get_json_content(stylespath)
+    global json_data
     try:
         # Check if json_data is a list
         if not isinstance(json_data, list):
@@ -76,7 +82,7 @@ def createPositive(style, positive):
 
 
 def createNegative(style, negative):
-    json_data = get_json_content(stylespath)
+    global json_data
     try:
         # Check if json_data is a list
         if not isinstance(json_data, list):
