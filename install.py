@@ -1,6 +1,6 @@
 import os
 import json
-
+from modules import shared
 # 获取当前脚本所在目录的绝对路径
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
