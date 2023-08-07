@@ -4,6 +4,7 @@ SDXL的style（不管是DreamStudio还是discord机器人）其实是通过提�
 这个A1111 webui插件，以插件形式实现了这个功能。  
 实际上，例如StylePile插件以及A1111的style也能实现这样的功能。  
 只是这个插件以一个极简的下拉菜单来完成。  
+如果你想要添加自定义的style预设，可以仿照sdxl_styles.json的内容形式，创建user_styles.json文件放在插件根目录下。
 
 ### 安装
 
